@@ -20,6 +20,13 @@ public:
     {
     }
     
+    // правило "трех":
+    // раз написали свой деструктор, то надо либо написать
+    // нормальные конструктор копирования и оператор присваивания,
+    // либо вообще от них отказаться
+    Queue(const Queue &other) = delete;
+    Queue& operator=(const Queue &other) = delete;
+    
     ~Queue()
     {
         while (!IsEmpty())
